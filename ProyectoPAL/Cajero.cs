@@ -47,5 +47,12 @@ namespace ProyectoPAL
 
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Registrarse registerForm = new Registrarse();
+            registerForm.Show();
+            this.Hide();
+        }
     }
 }

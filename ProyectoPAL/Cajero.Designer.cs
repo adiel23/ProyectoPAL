@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            openDepositBtn = new Button();
             balanceMessage = new Label();
             button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
-            // 
-            // openDepositBtn
-            // 
-            openDepositBtn.Location = new Point(76, 142);
-            openDepositBtn.Name = "openDepositBtn";
-            openDepositBtn.Size = new Size(149, 29);
-            openDepositBtn.TabIndex = 0;
-            openDepositBtn.Text = "depositar";
-            openDepositBtn.UseVisualStyleBackColor = true;
-            openDepositBtn.Click += openDepositBtn_Click;
             // 
             // balanceMessage
             // 
@@ -62,14 +53,34 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(340, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Iniciar sesion";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(267, 299);
+            label2.Name = "label2";
+            label2.Size = new Size(245, 20);
+            label2.TabIndex = 4;
+            label2.Text = "si no tienes una cuenta haz clic aqui";
+            label2.Click += label2_Click;
+            // 
             // Cajero
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(balanceMessage);
-            Controls.Add(openDepositBtn);
             Name = "Cajero";
             Text = "Cajero";
             Load += Cajero_Load;
@@ -78,9 +89,9 @@
         }
 
         #endregion
-
-        private Button openDepositBtn;
         private Label balanceMessage;
         private Button button1;
+        private Label label1;
+        private Label label2;
     }
 }
