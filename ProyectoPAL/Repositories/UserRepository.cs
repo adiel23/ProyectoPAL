@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoPAL
+namespace ProyectoPAL.Repositories
 {
     internal class UserRepository
     {
