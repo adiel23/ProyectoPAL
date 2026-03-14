@@ -1,6 +1,6 @@
 ﻿namespace ProyectoPAL
 {
-    partial class Cajero
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            balanceMessage = new Label();
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
+            usernameInput = new TextBox();
+            passwordInput = new TextBox();
+            loginBtn = new Button();
             SuspendLayout();
-            // 
-            // balanceMessage
-            // 
-            balanceMessage.AutoSize = true;
-            balanceMessage.Location = new Point(267, 50);
-            balanceMessage.Name = "balanceMessage";
-            balanceMessage.Size = new Size(0, 20);
-            balanceMessage.TabIndex = 1;
-            balanceMessage.Click += label1_Click;
             // 
             // button1
             // 
@@ -56,7 +49,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(340, 74);
+            label1.Location = new Point(346, 37);
             label1.Name = "label1";
             label1.Size = new Size(94, 20);
             label1.TabIndex = 3;
@@ -65,23 +58,49 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(267, 299);
+            label2.Location = new Point(267, 338);
             label2.Name = "label2";
             label2.Size = new Size(245, 20);
             label2.TabIndex = 4;
             label2.Text = "si no tienes una cuenta haz clic aqui";
             label2.Click += label2_Click;
             // 
-            // Cajero
+            // usernameInput
+            // 
+            usernameInput.Location = new Point(332, 123);
+            usernameInput.Name = "usernameInput";
+            usernameInput.Size = new Size(125, 27);
+            usernameInput.TabIndex = 5;
+            // 
+            // passwordInput
+            // 
+            passwordInput.Location = new Point(332, 184);
+            passwordInput.Name = "passwordInput";
+            passwordInput.Size = new Size(125, 27);
+            passwordInput.TabIndex = 6;
+            // 
+            // loginBtn
+            // 
+            loginBtn.Location = new Point(332, 252);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(125, 29);
+            loginBtn.TabIndex = 7;
+            loginBtn.Text = "Iniciar Sesion";
+            loginBtn.UseVisualStyleBackColor = true;
+            loginBtn.Click += loginBtn_Click;
+            // 
+            // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(loginBtn);
+            Controls.Add(passwordInput);
+            Controls.Add(usernameInput);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(balanceMessage);
-            Name = "Cajero";
+            Name = "Login";
             Text = "Cajero";
             Load += Cajero_Load;
             ResumeLayout(false);
@@ -89,9 +108,11 @@
         }
 
         #endregion
-        private Label balanceMessage;
         private Button button1;
         private Label label1;
         private Label label2;
+        private TextBox usernameInput;
+        private TextBox passwordInput;
+        private Button loginBtn;
     }
 }

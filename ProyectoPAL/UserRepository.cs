@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -22,6 +23,32 @@ namespace ProyectoPAL
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        public static User? FindUser(string username)
+        {
+            using (var connection = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            {
+                connection.Open();
+                string query = "select * from users where username = @username";
+                using(var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) // Avanza a la primera fila
+                        {
+                            return new User
+                            {
+                                username = reader.GetString(reader.GetOrdinal("username")),
+                                password = reader.GetString(reader.GetOrdinal("password")),
+                                balance = reader.GetDouble(reader.GetOrdinal("balance"))
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         public static void UpdateBalance(double balance)

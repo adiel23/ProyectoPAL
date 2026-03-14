@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,11 @@ using System.Windows.Forms;
 
 namespace ProyectoPAL
 {
-    public partial class Cajero : Form
+    public partial class Login : Form
     {
-        public Cajero()
+        public Login()
         {
             InitializeComponent();
-
-            balanceMessage.Text = "tu saldo actual es de " + GlobalData.ATMbalance + " dolares";
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,5 +52,32 @@ namespace ProyectoPAL
             registerForm.Show();
             this.Hide();
         }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            string username = usernameInput.Text;
+            User? user = UserRepository.FindUser(username);
+
+            if (user == null)
+            {
+                MessageBox.Show("usuario no encontrado");
+            } else
+            {
+                string password = passwordInput.Text;
+
+                if (password != user.password)
+                {
+                    MessageBox.Show("clave incorrecta");
+                } else
+                {
+                    ATMWindow atmWindow = new ATMWindow();
+
+                    atmWindow.Show();
+
+                    this.Hide();
+                }
+            }
+        }
+
     }
 }

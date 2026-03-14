@@ -31,7 +31,7 @@ namespace ProyectoPAL
             else
             {
                 UserRepository.Insert(username, password);
-                Cajero login = new Cajero();
+                Login login = new Login();
                 login.Show();
                 this.Hide();
             }
@@ -39,7 +39,11 @@ namespace ProyectoPAL
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+            Login loginWindow = new Login();
+
+            loginWindow.Show();
+
+            this.Hide();
         }
     }
 }
