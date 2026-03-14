@@ -8,6 +8,8 @@ namespace ProyectoPAL
 {
     internal class GlobalData
     {
-        public static decimal ATMbalance = 0;
+        public static int id;
+        public static string username;
+        public static double balance = 0;
     }
 }

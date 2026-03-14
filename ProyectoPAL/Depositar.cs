@@ -16,7 +16,7 @@ namespace ProyectoPAL
         {
             InitializeComponent();
 
-            balanceText.Text = "saldo: " + GlobalData.ATMbalance;
+            balanceText.Text = "saldo: " + GlobalData.balance;
         }
 
         private void Depositar_Load(object sender, EventArgs e)
@@ -26,9 +26,9 @@ namespace ProyectoPAL
 
         private void depositBtn_Click(object sender, EventArgs e)
         {
-            GlobalData.ATMbalance += decimal.Parse(amountTextBox.Text);
+            GlobalData.balance += double.Parse(amountTextBox.Text);
 
-            balanceText.Text = "saldo: " + GlobalData.ATMbalance.ToString();
+            balanceText.Text = "saldo: " + GlobalData.balance.ToString();
 
             successMessage.Text = "saldo actualizado con exito";
         }

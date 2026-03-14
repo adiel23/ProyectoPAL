@@ -70,6 +70,10 @@ namespace ProyectoPAL
                     MessageBox.Show("clave incorrecta");
                 } else
                 {
+                    GlobalData.id = user.id;
+                    GlobalData.username = user.username;
+                    GlobalData.balance = user.balance;
+
                     ATMWindow atmWindow = new ATMWindow();
 
                     atmWindow.Show();

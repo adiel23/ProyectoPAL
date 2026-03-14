@@ -40,6 +40,7 @@ namespace ProyectoPAL
                         {
                             return new User
                             {
+                                id = reader.GetInt32(reader.GetOrdinal("id")),
                                 username = reader.GetString(reader.GetOrdinal("username")),
                                 password = reader.GetString(reader.GetOrdinal("password")),
                                 balance = reader.GetDouble(reader.GetOrdinal("balance"))
