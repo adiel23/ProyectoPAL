@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,11 +27,36 @@ namespace ProyectoPAL
 
         private void depositBtn_Click(object sender, EventArgs e)
         {
-            GlobalData.balance += double.Parse(amountTextBox.Text);
+            int userId = GlobalData.id;
 
-            balanceText.Text = "saldo: " + GlobalData.balance.ToString();
+            if (!double.TryParse(amountTextBox.Text, out double amount))
+            {
+                MessageBox.Show("Ingresa un monto válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            successMessage.Text = "saldo actualizado con exito";
+            try
+            {
+                UserRepository.UpdateBalance(userId, amount);
+
+                User? user = UserRepository.FindUserById(userId);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                GlobalData.balance = user.balance;
+
+                balanceText.Text = "saldo: " + GlobalData.balance;
+
+                successMessage.Text = $"Saldo actualizado. Nuevo balance: {GlobalData.balance}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar el saldo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Depositar_Load_1(object sender, EventArgs e)
@@ -40,9 +66,9 @@ namespace ProyectoPAL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login ATMWindow = new Login();
+            ATMWindow atmWindow = new();
 
-            ATMWindow.Show();
+            atmWindow.Show();
 
             this.Hide();
         }

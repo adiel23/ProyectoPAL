@@ -52,18 +52,49 @@ namespace ProyectoPAL
             return null;
         }
 
-        public static void UpdateBalance(double balance)
+        public static User? FindUserById(int id)
         {
             using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
-                string sql = "update users set balance = @balance";
-                using(var command = new SQLiteCommand(sql, conn))
+
+                string query = "select * from users where id = @id";
+
+                using(var command = new SQLiteCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@balance", balance);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new User
+                            {
+                                id = reader.GetInt32(reader.GetOrdinal("id")),
+                                username = reader.GetString(reader.GetOrdinal("username")),
+                                balance = reader.GetDouble(reader.GetOrdinal("balance"))
+                            };
+                        }
+                    }
+                    
                 }
             }
 
+            return null;
+        }
+        public static void UpdateBalance(int userId, double amount)
+        {
+            using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            {
+                conn.Open();
+                string sql = "update users set balance = balance + @amount where id = @userId";
+                using(var command = new SQLiteCommand(sql, conn))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@amount", amount);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
