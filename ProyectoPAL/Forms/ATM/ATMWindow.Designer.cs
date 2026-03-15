@@ -82,6 +82,7 @@
             openTransferWindowBtn.TabIndex = 10;
             openTransferWindowBtn.Text = "transferir";
             openTransferWindowBtn.UseVisualStyleBackColor = true;
+            openTransferWindowBtn.Click += openTransferWindowBtn_Click;
             // 
             // ATMWindow
             // 

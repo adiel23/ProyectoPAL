@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAL.Forms.ATM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,15 @@ namespace ProyectoPAL
             Depositar depositWindow = new Depositar();
 
             depositWindow.Show();
+
+            this.Hide();
+        }
+
+        private void openTransferWindowBtn_Click(object sender, EventArgs e)
+        {
+            TransferWindow transferWindow = new();
+
+            transferWindow.Show();
 
             this.Hide();
         }

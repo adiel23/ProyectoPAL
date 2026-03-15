@@ -82,6 +82,7 @@ namespace ProyectoPAL.Repositories
 
             return null;
         }
+
         public static void UpdateBalance(int userId, double amount)
         {
             using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
@@ -95,6 +96,18 @@ namespace ProyectoPAL.Repositories
                     command.ExecuteNonQuery();
                 }
             }
+        }
+
+        public static void UpdateBalance(int userId, double amount, SQLiteConnection connection, SQLiteTransaction transaction)
+        {
+            string query = "update users set balance = balance + @amount where id = @userId";
+
+            using var command = new SQLiteCommand(query, connection);
+            command.Transaction = transaction;
+            command.Parameters.AddWithValue("@userId", userId);
+            command.Parameters.AddWithValue("@amount", amount);
+            command.ExecuteNonQuery();
+
         }
     }
 }
