@@ -25,14 +25,12 @@ namespace ProyectoPAL
 
             if (username == "" || password == "")
             {
-                errorMessage.Text = "el usuario o la contrasena estan incorrectos";
-                usernameInput.Text = "";
-                passwordInput.Text = "";
+                MessageBox.Show("Rellena ambos campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 UserRepository.Insert(username, password);
-                Login login = new Login();
+                Login login = new();
                 login.Show();
                 this.Hide();
             }
@@ -40,7 +38,7 @@ namespace ProyectoPAL
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Login loginWindow = new Login();
+            Login loginWindow = new();
 
             loginWindow.Show();
 

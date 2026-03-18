@@ -31,7 +31,7 @@ namespace ProyectoPAL
 
         private void openDepositBtn_Click(object sender, EventArgs e)
         {
-            Depositar depositWindow = new Depositar();
+            Depositar depositWindow = new();
 
             depositWindow.Show();
 
@@ -40,7 +40,7 @@ namespace ProyectoPAL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 home = new Form1();
+            Form1 home = new();
 
             home.Show();
 
@@ -49,7 +49,7 @@ namespace ProyectoPAL
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Registrarse registerForm = new Registrarse();
+            Registrarse registerForm = new();
             registerForm.Show();
             this.Hide();
         }
@@ -57,29 +57,37 @@ namespace ProyectoPAL
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string username = usernameInput.Text;
-            User? user = UserRepository.FindUser(username);
+            string password = passwordInput.Text;
 
-            if (user == null)
+            if (username == "" || password == "")
             {
-                MessageBox.Show("usuario no encontrado");
+                MessageBox.Show("rellena ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                string password = passwordInput.Text;
+                User? user = UserRepository.FindUser(username);
 
-                if (password != user.password)
+                if (user == null)
                 {
-                    MessageBox.Show("clave incorrecta");
-                } else
+                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
                 {
-                    GlobalData.id = user.id;
-                    GlobalData.username = user.username;
-                    GlobalData.balance = user.balance;
+                    if (password != user.password)
+                    {
+                        MessageBox.Show("clave incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        GlobalData.id = user.id;
+                        GlobalData.username = user.username;
+                        GlobalData.balance = user.balance;
 
-                    ATMWindow atmWindow = new ATMWindow();
+                        ATMWindow atmWindow = new();
 
-                    atmWindow.Show();
+                        atmWindow.Show();
 
-                    this.Hide();
+                        this.Hide();
+                    }
                 }
             }
         }
