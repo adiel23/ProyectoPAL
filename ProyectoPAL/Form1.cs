@@ -5,6 +5,8 @@ namespace ProyectoPAL
         public Form1()
         {
             InitializeComponent();
+
+            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace ProyectoPAL
             inheritanceWindow.Show();
 
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

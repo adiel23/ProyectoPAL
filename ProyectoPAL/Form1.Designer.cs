@@ -38,17 +38,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(246, 28);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(173, 24);
             label1.Name = "label1";
-            label1.Size = new Size(242, 20);
+            label1.Size = new Size(453, 38);
             label1.TabIndex = 0;
             label1.Text = "PROGRAMACION DE ALGORITMOS";
+            label1.Click += label1_Click;
             // 
             // openAngleBtn
             // 
-            openAngleBtn.Location = new Point(135, 132);
+            openAngleBtn.Font = new Font("Segoe UI", 10.2F);
+            openAngleBtn.Location = new Point(100, 132);
             openAngleBtn.Name = "openAngleBtn";
-            openAngleBtn.Size = new Size(158, 29);
+            openAngleBtn.Size = new Size(175, 45);
             openAngleBtn.TabIndex = 1;
             openAngleBtn.Text = "Angulos Agudos";
             openAngleBtn.UseVisualStyleBackColor = true;
@@ -56,9 +61,10 @@
             // 
             // openDeterminantBtn
             // 
-            openDeterminantBtn.Location = new Point(410, 132);
+            openDeterminantBtn.Font = new Font("Segoe UI", 10.2F);
+            openDeterminantBtn.Location = new Point(470, 132);
             openDeterminantBtn.Name = "openDeterminantBtn";
-            openDeterminantBtn.Size = new Size(232, 29);
+            openDeterminantBtn.Size = new Size(249, 45);
             openDeterminantBtn.TabIndex = 2;
             openDeterminantBtn.Text = "Determinante regla Krammer";
             openDeterminantBtn.UseVisualStyleBackColor = true;
@@ -66,9 +72,10 @@
             // 
             // openATMBtn
             // 
-            openATMBtn.Location = new Point(135, 259);
+            openATMBtn.Font = new Font("Segoe UI", 10.2F);
+            openATMBtn.Location = new Point(100, 259);
             openATMBtn.Name = "openATMBtn";
-            openATMBtn.Size = new Size(155, 29);
+            openATMBtn.Size = new Size(172, 45);
             openATMBtn.TabIndex = 3;
             openATMBtn.Text = "Cajero del banco";
             openATMBtn.UseVisualStyleBackColor = true;
@@ -76,9 +83,10 @@
             // 
             // openInheritenceBtn
             // 
-            openInheritenceBtn.Location = new Point(483, 259);
+            openInheritenceBtn.Font = new Font("Segoe UI", 10.2F);
+            openInheritenceBtn.Location = new Point(547, 259);
             openInheritenceBtn.Name = "openInheritenceBtn";
-            openInheritenceBtn.Size = new Size(94, 29);
+            openInheritenceBtn.Size = new Size(111, 45);
             openInheritenceBtn.TabIndex = 4;
             openInheritenceBtn.Text = "Herencia";
             openInheritenceBtn.UseVisualStyleBackColor = true;
@@ -88,6 +96,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.home_bg;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(openInheritenceBtn);
             Controls.Add(openATMBtn);
@@ -95,6 +105,7 @@
             Controls.Add(openAngleBtn);
             Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
