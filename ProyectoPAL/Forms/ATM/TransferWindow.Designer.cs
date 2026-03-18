@@ -122,6 +122,7 @@
             Controls.Add(balanceText);
             Controls.Add(button1);
             Name = "TransferWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TransferWindow";
             Load += TransferWindow_Load;
             ResumeLayout(false);

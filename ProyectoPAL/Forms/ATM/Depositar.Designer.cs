@@ -101,6 +101,7 @@
             Controls.Add(amountTextBox);
             Controls.Add(label1);
             Name = "Depositar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Depositar";
             Load += Depositar_Load_1;
             ResumeLayout(false);

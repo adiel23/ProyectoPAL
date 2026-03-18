@@ -99,6 +99,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Registrarse";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrarse";
             ResumeLayout(false);
             PerformLayout();

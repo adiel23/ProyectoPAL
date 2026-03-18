@@ -101,6 +101,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cajero";
             Load += Cajero_Load;
             ResumeLayout(false);

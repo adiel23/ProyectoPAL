@@ -95,6 +95,7 @@
             Controls.Add(balanceText);
             Controls.Add(goBackBtn);
             Name = "ATMWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ATM";
             ResumeLayout(false);
             PerformLayout();
