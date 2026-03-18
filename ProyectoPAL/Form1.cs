@@ -32,7 +32,7 @@ namespace ProyectoPAL
 
         private void openATMBtn_Click(object sender, EventArgs e)
         {
-            Cajero ATMWindow = new Cajero();
+            Login ATMWindow = new Login();
 
             ATMWindow.Show();
 
