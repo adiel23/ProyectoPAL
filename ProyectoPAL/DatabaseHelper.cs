@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
+using System.IO;    
 
 namespace ProyectoPAL
 {
     internal class DatabaseHelper
     {
         private static string dbRoute = Path.Combine(Application.StartupPath, "ProyectoPAL.db");
-        public static string ConnectionString = $"Data Source={dbRoute};Version=3;";
+        public static string ConnectionString = $"Data Source={dbRoute}";
 
         public static void InitializeDB()
         {
-            if (!File.Exists(dbRoute))
-            {
-                SQLiteConnection.CreateFile(dbRoute);
-            }
-
-            using (var conn = new SQLiteConnection(ConnectionString))
+            using (var conn = new SqliteConnection(ConnectionString))
             {
                 conn.Open();
 
@@ -31,7 +27,7 @@ namespace ProyectoPAL
                         balance     REAL    NOT NULL DEFAULT 0.0
                     );";
 
-                using (var command = new SQLiteCommand(crearTabla, conn))
+                using (var command = new SqliteCommand(crearTabla, conn))
                 {
                     command.ExecuteNonQuery();
                 }

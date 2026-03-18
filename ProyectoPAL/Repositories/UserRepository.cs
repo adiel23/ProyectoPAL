@@ -1,7 +1,7 @@
-﻿using ProyectoPAL.Models;
+﻿using Microsoft.Data.Sqlite;
+using ProyectoPAL.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +12,11 @@ namespace ProyectoPAL.Repositories
     {
         public static void Insert(string username, string password)
         {
-            using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string sql = "INSERT INTO users (username, password) VALUES (@username, @password)";
-                using (var command = new SQLiteCommand(sql, conn))
+                using (var command = new SqliteCommand(sql, conn))
                 {
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
@@ -26,11 +26,11 @@ namespace ProyectoPAL.Repositories
         }
         public static User? FindUser(string username)
         {
-            using (var connection = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            using (var connection = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 connection.Open();
                 string query = "select * from users where username = @username";
-                using(var command = new SQLiteCommand(query, connection))
+                using(var command = new SqliteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@username", username);
 
@@ -54,13 +54,13 @@ namespace ProyectoPAL.Repositories
 
         public static User? FindUserById(int id)
         {
-            using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
 
                 string query = "select * from users where id = @id";
 
-                using(var command = new SQLiteCommand(query, conn))
+                using(var command = new SqliteCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id", id);
 
@@ -85,11 +85,11 @@ namespace ProyectoPAL.Repositories
 
         public static void UpdateBalance(int userId, double amount)
         {
-            using (var conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string sql = "update users set balance = balance + @amount where id = @userId";
-                using(var command = new SQLiteCommand(sql, conn))
+                using(var command = new SqliteCommand(sql, conn))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@amount", amount);
@@ -98,11 +98,11 @@ namespace ProyectoPAL.Repositories
             }
         }
 
-        public static void UpdateBalance(int userId, double amount, SQLiteConnection connection, SQLiteTransaction transaction)
+        public static void UpdateBalance(int userId, double amount, SqliteConnection connection, SqliteTransaction transaction)
         {
             string query = "update users set balance = balance + @amount where id = @userId";
 
-            using var command = new SQLiteCommand(query, connection);
+            using var command = new SqliteCommand(query, connection);
             command.Transaction = transaction;
             command.Parameters.AddWithValue("@userId", userId);
             command.Parameters.AddWithValue("@amount", amount);

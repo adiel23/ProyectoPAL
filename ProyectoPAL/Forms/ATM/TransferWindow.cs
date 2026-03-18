@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,7 +72,7 @@ namespace ProyectoPAL.Forms.ATM
                     throw new InvalidOperationException("No se encontro el usuario " + '"' + username + '"');
                 }
 
-                using (var connection = new SQLiteConnection(DatabaseHelper.ConnectionString))
+                using (var connection = new SqliteConnection(DatabaseHelper.ConnectionString))
                 {
                     connection.Open();
                     using (var transaction = connection.BeginTransaction())
