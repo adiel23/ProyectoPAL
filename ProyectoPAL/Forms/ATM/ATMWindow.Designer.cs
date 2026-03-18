@@ -73,6 +73,7 @@
             openWithdrawWindowBtn.TabIndex = 9;
             openWithdrawWindowBtn.Text = "retirar";
             openWithdrawWindowBtn.UseVisualStyleBackColor = true;
+            openWithdrawWindowBtn.Click += openWithdrawWindowBtn_Click;
             // 
             // openTransferWindowBtn
             // 

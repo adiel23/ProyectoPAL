@@ -51,5 +51,14 @@ namespace ProyectoPAL
 
             this.Hide();
         }
+
+        private void openWithdrawWindowBtn_Click(object sender, EventArgs e)
+        {
+            WithdrawWindow withdrawWindow = new();
+
+            withdrawWindow.Show();
+
+            this.Hide();
+        }
     }
 }
