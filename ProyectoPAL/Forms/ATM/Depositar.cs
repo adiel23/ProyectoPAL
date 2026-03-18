@@ -36,6 +36,14 @@ namespace ProyectoPAL
                 return;
             }
 
+            // validar que no se ingrese un numero negativo
+
+            if (amount <= 0)
+            {
+                MessageBox.Show("El monto a depositar debe ser mayor a cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 UserRepository.UpdateBalance(userId, amount);

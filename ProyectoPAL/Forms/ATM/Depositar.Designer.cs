@@ -55,7 +55,7 @@
             // successMessage
             // 
             successMessage.AutoSize = true;
-            successMessage.Location = new Point(305, 265);
+            successMessage.Location = new Point(266, 254);
             successMessage.Name = "successMessage";
             successMessage.Size = new Size(0, 20);
             successMessage.TabIndex = 2;
