@@ -70,14 +70,12 @@ namespace ProyectoPAL
 
         private void ObtenerCoeficientes(string ecuacion, out double coefX, out double coefY, out double resultado)
         {
-            ecuacion = ecuacion.Replace("-", "+-");
-
             string[] partes = ecuacion.Split('=');
 
             if (partes.Length != 2)
                 throw new Exception("Ecuación inválida");
 
-            string izquierda = partes[0];
+            string izquierda = partes[0].Replace("-", "+-");
             string derecha = partes[1];
 
             resultado = Convert.ToDouble(derecha);
