@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Angulos));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -50,10 +51,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_03_17_at_10_22_52_AM;
-            pictureBox1.Location = new Point(419, 127);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(383, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(356, 193);
+            pictureBox1.Size = new Size(405, 284);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -73,7 +74,7 @@
             label2.BackColor = Color.FromArgb(255, 192, 255);
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(30, 79);
+            label2.Location = new Point(2, 75);
             label2.Name = "label2";
             label2.Size = new Size(363, 84);
             label2.TabIndex = 2;
@@ -176,7 +177,7 @@
             // 
             btnCalcular.BackColor = Color.Lime;
             btnCalcular.FlatStyle = FlatStyle.Flat;
-            btnCalcular.Location = new Point(506, 352);
+            btnCalcular.Location = new Point(486, 401);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(75, 23);
             btnCalcular.TabIndex = 14;
@@ -188,7 +189,7 @@
             // 
             btnBorrar.BackColor = Color.Red;
             btnBorrar.FlatStyle = FlatStyle.Flat;
-            btnBorrar.Location = new Point(647, 352);
+            btnBorrar.Location = new Point(648, 397);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(75, 23);
             btnBorrar.TabIndex = 15;
