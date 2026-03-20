@@ -36,6 +36,7 @@
             calculateBtn = new Button();
             abogadoLabel = new Label();
             button1 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -111,11 +112,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(522, 393);
+            label2.Name = "label2";
+            label2.Size = new Size(243, 20);
+            label2.TabIndex = 8;
+            label2.Text = "Moisés Eduardo Monchez Alvarado";
+            // 
             // Herencia
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(abogadoLabel);
             Controls.Add(calculateBtn);
@@ -141,5 +152,6 @@
         private Button calculateBtn;
         private Label abogadoLabel;
         private Button button1;
+        private Label label2;
     }
 }

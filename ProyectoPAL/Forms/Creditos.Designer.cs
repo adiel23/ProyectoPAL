@@ -157,6 +157,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "Creditos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Creditos";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

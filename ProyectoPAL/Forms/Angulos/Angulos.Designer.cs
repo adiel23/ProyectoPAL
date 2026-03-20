@@ -45,6 +45,7 @@
             btnCalcular = new Button();
             btnBorrar = new Button();
             btnRegresar = new Button();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -218,11 +219,21 @@
             btnRegresar.UseVisualStyleBackColor = false;
             btnRegresar.Click += btnRegresar_Click;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(680, 31);
+            label9.Name = "label9";
+            label9.Size = new Size(200, 20);
+            label9.TabIndex = 17;
+            label9.Text = "Henry Ezequiel Rauda Garcia";
+            // 
             // Angulos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(label9);
             Controls.Add(btnRegresar);
             Controls.Add(btnBorrar);
             Controls.Add(btnCalcular);
@@ -267,5 +278,6 @@
         private Button btnCalcular;
         private Button btnBorrar;
         private Button btnRegresar;
+        private Label label9;
     }
 }

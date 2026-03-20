@@ -33,6 +33,7 @@
             openDepositWindowBtn = new Button();
             openWithdrawWindowBtn = new Button();
             openTransferWindowBtn = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // goBackBtn
@@ -85,11 +86,21 @@
             openTransferWindowBtn.UseVisualStyleBackColor = true;
             openTransferWindowBtn.Click += openTransferWindowBtn_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(35, 392);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 20);
+            label1.TabIndex = 11;
+            label1.Text = "Hecho por: Adiel Arturo Elias Mercado";
+            // 
             // ATMWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(openTransferWindowBtn);
             Controls.Add(openWithdrawWindowBtn);
             Controls.Add(openDepositWindowBtn);
@@ -109,5 +120,6 @@
         private Button openDepositWindowBtn;
         private Button openWithdrawWindowBtn;
         private Button openTransferWindowBtn;
+        private Label label1;
     }
 }
