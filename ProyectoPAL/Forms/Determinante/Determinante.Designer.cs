@@ -147,6 +147,7 @@
             Controls.Add(CalcularBttn);
             Controls.Add(BackBttn);
             Name = "Determinante";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Determinante";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

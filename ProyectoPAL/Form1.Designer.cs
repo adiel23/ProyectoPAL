@@ -60,7 +60,7 @@
             openDeterminantBtn.Name = "openDeterminantBtn";
             openDeterminantBtn.Size = new Size(232, 29);
             openDeterminantBtn.TabIndex = 2;
-            openDeterminantBtn.Text = "Determinante regla Krammer";
+            openDeterminantBtn.Text = "Determinante regla cramer";
             openDeterminantBtn.UseVisualStyleBackColor = true;
             openDeterminantBtn.Click += openDeterminantBtn_Click;
             // 

@@ -34,14 +34,17 @@
             passwordInput = new TextBox();
             registerBtn = new Button();
             errorMessage = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(346, 33);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(334, 28);
             label1.Name = "label1";
-            label1.Size = new Size(82, 20);
+            label1.Size = new Size(107, 28);
             label1.TabIndex = 0;
             label1.Text = "Registrarse";
             // 
@@ -57,21 +60,21 @@
             // 
             // usernameInput
             // 
-            usernameInput.Location = new Point(288, 155);
+            usernameInput.Location = new Point(288, 137);
             usernameInput.Name = "usernameInput";
             usernameInput.Size = new Size(195, 27);
             usernameInput.TabIndex = 2;
             // 
             // passwordInput
             // 
-            passwordInput.Location = new Point(288, 210);
+            passwordInput.Location = new Point(288, 222);
             passwordInput.Name = "passwordInput";
             passwordInput.Size = new Size(195, 27);
             passwordInput.TabIndex = 3;
             // 
             // registerBtn
             // 
-            registerBtn.Location = new Point(334, 272);
+            registerBtn.Location = new Point(334, 283);
             registerBtn.Name = "registerBtn";
             registerBtn.Size = new Size(94, 29);
             registerBtn.TabIndex = 4;
@@ -87,11 +90,31 @@
             errorMessage.Size = new Size(0, 20);
             errorMessage.TabIndex = 5;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(316, 114);
+            label3.Name = "label3";
+            label3.Size = new Size(134, 20);
+            label3.TabIndex = 9;
+            label3.Text = "nombre de usuario";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(343, 199);
+            label4.Name = "label4";
+            label4.Size = new Size(85, 20);
+            label4.TabIndex = 10;
+            label4.Text = "contrasenia";
+            // 
             // Registrarse
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(errorMessage);
             Controls.Add(registerBtn);
             Controls.Add(passwordInput);
@@ -113,5 +136,7 @@
         private TextBox passwordInput;
         private Button registerBtn;
         private Label errorMessage;
+        private Label label3;
+        private Label label4;
     }
 }
