@@ -1,3 +1,5 @@
+using ProyectoPAL.Forms;
+
 namespace ProyectoPAL
 {
     public partial class Form1 : Form
@@ -44,6 +46,15 @@ namespace ProyectoPAL
             Herencia inheritanceWindow = new Herencia();
 
             inheritanceWindow.Show();
+
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Creditos creditosWindow = new();
+
+            creditosWindow.Show();
 
             this.Hide();
         }

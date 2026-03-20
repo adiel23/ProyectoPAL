@@ -33,14 +33,18 @@
             openDeterminantBtn = new Button();
             openATMBtn = new Button();
             openInheritenceBtn = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(246, 28);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(233, 29);
             label1.Name = "label1";
-            label1.Size = new Size(242, 20);
+            label1.Size = new Size(322, 28);
             label1.TabIndex = 0;
             label1.Text = "PROGRAMACION DE ALGORITMOS";
             // 
@@ -56,7 +60,7 @@
             // 
             // openDeterminantBtn
             // 
-            openDeterminantBtn.Location = new Point(410, 132);
+            openDeterminantBtn.Location = new Point(469, 132);
             openDeterminantBtn.Name = "openDeterminantBtn";
             openDeterminantBtn.Size = new Size(232, 29);
             openDeterminantBtn.TabIndex = 2;
@@ -76,7 +80,7 @@
             // 
             // openInheritenceBtn
             // 
-            openInheritenceBtn.Location = new Point(483, 259);
+            openInheritenceBtn.Location = new Point(547, 259);
             openInheritenceBtn.Name = "openInheritenceBtn";
             openInheritenceBtn.Size = new Size(94, 29);
             openInheritenceBtn.TabIndex = 4;
@@ -84,11 +88,24 @@
             openInheritenceBtn.UseVisualStyleBackColor = true;
             openInheritenceBtn.Click += openInheritenceBtn_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(356, 363);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 5;
+            button1.Text = "creditos";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.background;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(openInheritenceBtn);
             Controls.Add(openATMBtn);
             Controls.Add(openDeterminantBtn);
@@ -109,5 +126,6 @@
         private Button openDeterminantBtn;
         private Button openATMBtn;
         private Button openInheritenceBtn;
+        private Button button1;
     }
 }
