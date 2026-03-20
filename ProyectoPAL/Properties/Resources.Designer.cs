@@ -63,6 +63,16 @@ namespace ProyectoPAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pictureBox1_Image {
+            get {
+                object obj = ResourceManager.GetObject("pictureBox1.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2026_03_17_at_10_22_52_AM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2026-03-17 at 10.22.52 AM", resourceCulture);
