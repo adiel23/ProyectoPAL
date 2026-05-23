@@ -1,4 +1,5 @@
 using ProyectoPAL.Forms;
+using ProyectoPAL.Forms.Ordenamiento;
 
 namespace ProyectoPAL
 {
@@ -55,6 +56,15 @@ namespace ProyectoPAL
             Creditos creditosWindow = new();
 
             creditosWindow.Show();
+
+            this.Hide();
+        }
+
+        private void openOrderingViewBtn_Click(object sender, EventArgs e)
+        {
+            OrdenamientoForm ordenamientoForm = new OrdenamientoForm();
+
+            ordenamientoForm.Show();
 
             this.Hide();
         }

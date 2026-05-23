@@ -34,6 +34,7 @@
             openATMBtn = new Button();
             openInheritenceBtn = new Button();
             button1 = new Button();
+            openOrderingViewBtn = new Button();
             SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // 
             // openAngleBtn
             // 
-            openAngleBtn.Location = new Point(135, 132);
+            openAngleBtn.Location = new Point(112, 129);
             openAngleBtn.Name = "openAngleBtn";
             openAngleBtn.Size = new Size(158, 29);
             openAngleBtn.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // openDeterminantBtn
             // 
-            openDeterminantBtn.Location = new Point(469, 132);
+            openDeterminantBtn.Location = new Point(73, 290);
             openDeterminantBtn.Name = "openDeterminantBtn";
             openDeterminantBtn.Size = new Size(232, 29);
             openDeterminantBtn.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // openATMBtn
             // 
-            openATMBtn.Location = new Point(135, 259);
+            openATMBtn.Location = new Point(115, 186);
             openATMBtn.Name = "openATMBtn";
             openATMBtn.Size = new Size(155, 29);
             openATMBtn.TabIndex = 3;
@@ -80,7 +81,7 @@
             // 
             // openInheritenceBtn
             // 
-            openInheritenceBtn.Location = new Point(547, 259);
+            openInheritenceBtn.Location = new Point(144, 238);
             openInheritenceBtn.Name = "openInheritenceBtn";
             openInheritenceBtn.Size = new Size(94, 29);
             openInheritenceBtn.TabIndex = 4;
@@ -98,6 +99,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // openOrderingViewBtn
+            // 
+            openOrderingViewBtn.Location = new Point(539, 129);
+            openOrderingViewBtn.Name = "openOrderingViewBtn";
+            openOrderingViewBtn.Size = new Size(158, 29);
+            openOrderingViewBtn.TabIndex = 6;
+            openOrderingViewBtn.Text = "Ordenamiento";
+            openOrderingViewBtn.UseVisualStyleBackColor = true;
+            openOrderingViewBtn.Click += openOrderingViewBtn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -105,6 +116,7 @@
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(openOrderingViewBtn);
             Controls.Add(button1);
             Controls.Add(openInheritenceBtn);
             Controls.Add(openATMBtn);
@@ -127,5 +139,6 @@
         private Button openATMBtn;
         private Button openInheritenceBtn;
         private Button button1;
+        private Button openOrderingViewBtn;
     }
 }
