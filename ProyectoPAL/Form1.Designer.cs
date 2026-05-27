@@ -35,6 +35,7 @@
             openInheritenceBtn = new Button();
             button1 = new Button();
             openOrderingViewBtn = new Button();
+            btnPlano = new Button();
             SuspendLayout();
             // 
             // label1
@@ -43,17 +44,18 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(233, 29);
+            label1.Location = new Point(204, 22);
             label1.Name = "label1";
-            label1.Size = new Size(322, 28);
+            label1.Size = new Size(258, 21);
             label1.TabIndex = 0;
             label1.Text = "PROGRAMACION DE ALGORITMOS";
             // 
             // openAngleBtn
             // 
-            openAngleBtn.Location = new Point(112, 129);
+            openAngleBtn.Location = new Point(98, 97);
+            openAngleBtn.Margin = new Padding(3, 2, 3, 2);
             openAngleBtn.Name = "openAngleBtn";
-            openAngleBtn.Size = new Size(158, 29);
+            openAngleBtn.Size = new Size(138, 22);
             openAngleBtn.TabIndex = 1;
             openAngleBtn.Text = "Angulos Agudos";
             openAngleBtn.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             // openDeterminantBtn
             // 
-            openDeterminantBtn.Location = new Point(73, 290);
+            openDeterminantBtn.Location = new Point(64, 218);
+            openDeterminantBtn.Margin = new Padding(3, 2, 3, 2);
             openDeterminantBtn.Name = "openDeterminantBtn";
-            openDeterminantBtn.Size = new Size(232, 29);
+            openDeterminantBtn.Size = new Size(203, 22);
             openDeterminantBtn.TabIndex = 2;
             openDeterminantBtn.Text = "Determinante regla cramer";
             openDeterminantBtn.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             // openATMBtn
             // 
-            openATMBtn.Location = new Point(115, 186);
+            openATMBtn.Location = new Point(101, 140);
+            openATMBtn.Margin = new Padding(3, 2, 3, 2);
             openATMBtn.Name = "openATMBtn";
-            openATMBtn.Size = new Size(155, 29);
+            openATMBtn.Size = new Size(136, 22);
             openATMBtn.TabIndex = 3;
             openATMBtn.Text = "Cajero del banco";
             openATMBtn.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // 
             // openInheritenceBtn
             // 
-            openInheritenceBtn.Location = new Point(144, 238);
+            openInheritenceBtn.Location = new Point(126, 178);
+            openInheritenceBtn.Margin = new Padding(3, 2, 3, 2);
             openInheritenceBtn.Name = "openInheritenceBtn";
-            openInheritenceBtn.Size = new Size(94, 29);
+            openInheritenceBtn.Size = new Size(82, 22);
             openInheritenceBtn.TabIndex = 4;
             openInheritenceBtn.Text = "Herencia";
             openInheritenceBtn.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(356, 363);
+            button1.Location = new Point(312, 272);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 5;
             button1.Text = "creditos";
             button1.UseVisualStyleBackColor = true;
@@ -101,21 +107,33 @@
             // 
             // openOrderingViewBtn
             // 
-            openOrderingViewBtn.Location = new Point(539, 129);
+            openOrderingViewBtn.Location = new Point(472, 97);
+            openOrderingViewBtn.Margin = new Padding(3, 2, 3, 2);
             openOrderingViewBtn.Name = "openOrderingViewBtn";
-            openOrderingViewBtn.Size = new Size(158, 29);
+            openOrderingViewBtn.Size = new Size(138, 22);
             openOrderingViewBtn.TabIndex = 6;
             openOrderingViewBtn.Text = "Ordenamiento";
             openOrderingViewBtn.UseVisualStyleBackColor = true;
             openOrderingViewBtn.Click += openOrderingViewBtn_Click;
             // 
+            // btnPlano
+            // 
+            btnPlano.Location = new Point(472, 177);
+            btnPlano.Name = "btnPlano";
+            btnPlano.Size = new Size(138, 23);
+            btnPlano.TabIndex = 7;
+            btnPlano.Text = "Plano Cartesiano";
+            btnPlano.UseVisualStyleBackColor = true;
+            btnPlano.Click += btnPlano_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
+            Controls.Add(btnPlano);
             Controls.Add(openOrderingViewBtn);
             Controls.Add(button1);
             Controls.Add(openInheritenceBtn);
@@ -123,6 +141,7 @@
             Controls.Add(openDeterminantBtn);
             Controls.Add(openAngleBtn);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -140,5 +159,6 @@
         private Button openInheritenceBtn;
         private Button button1;
         private Button openOrderingViewBtn;
+        private Button btnPlano;
     }
 }

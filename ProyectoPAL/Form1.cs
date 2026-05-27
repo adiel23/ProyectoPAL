@@ -5,6 +5,7 @@ namespace ProyectoPAL
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -68,5 +69,16 @@ namespace ProyectoPAL
 
             this.Hide();
         }
+
+        private void btnPlano_Click(object sender, EventArgs e)
+        
+        {
+            PlanoCartesiano ventana = new PlanoCartesiano();
+            ventana.Show();
+
+            this.Hide();
+        }
     }
-}
+    }
+
+
